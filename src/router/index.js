@@ -8,7 +8,7 @@ const Router = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/first" element={<FirstPage />} />
+        <Route path="/" element={<FirstPage />} />
         <Route path="/second" element={<SecondPage />} />
         <Route path="/last" element={<LastPage />} />
       </Routes>
