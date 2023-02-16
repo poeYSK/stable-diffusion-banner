@@ -1,15 +1,18 @@
 const questionData = [
   {
     id: "first_id",
-    question: "first q",
+    question: "First question",
+    placehoder: "first place",
   },
   {
     id: "second_id",
-    question: "second q",
+    question: "Second question",
+    placehoder: "second place",
   },
   {
     id: "third_id",
-    question: "third q",
+    question: "Third question",
+    placehoder: "third place",
   },
 ];
 
