@@ -1,44 +1,38 @@
 import React, { useState } from "react";
-import TextareaAutosize from "react-textarea-autosize";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
-import questionData from "./QuestionData";
+import questionData from "../../data/QuestionData";
+import { Question } from "../../components/question";
+import { Label } from "../../components/label";
 
-const FirstPage = () => {
-  const onHandleSubmit = () => {};
+const FirstPage = (props) => {
+  const navigate = useNavigate();
+  const [text, setText] = useState("");
+  const onTextChange = (e) => {
+    setText(e.target.value);
+    console.log(text);
+  };
+
+  const onClickSubmit = () => {
+    navigate("/second");
+  };
 
   return (
     <div id="container-First">
-      <div id="form-question">
-        <label>{questionData[0].question}</label>
-        <br />
-        <TextareaAutosize
-          id="first-question"
-          className="question-class"
-          minRows={5}
-          cols={100}
-        />
-        <br />
-        <label>{questionData[1].question}</label>
-        <br />
-        <TextareaAutosize
-          id="second-question"
-          className="question-class"
-          minRows={5}
-          cols={100}
-        />
-        <br />
-        <label>{questionData[2].question}</label>
-        <br />
-        <TextareaAutosize
-          id="third-question"
-          className="question-class"
-          minRows={5}
-          cols={100}
-        />
+      <div id="logo">
+        <h1>A.I.Banner</h1>
       </div>
-      <form onSubmit={onHandleSubmit}>
+      <div id="form-question">
+        <Label q={questionData[0]} /> <br />
+        <Question q={questionData[0]} /> <br />
+        <Label q={questionData[1]} /> <br />
+        <Question q={questionData[1]} /> <br />
+        <Label q={questionData[2]} /> <br />
+        <Question q={questionData[2]} /> <br />
+      </div>
+      <form>
         <div id="submit">
-          <button id="submitButton" type="sumbit">
+          <button id="submitButton" type="sumbit" onClick={onClickSubmit}>
             Submit
           </button>
         </div>

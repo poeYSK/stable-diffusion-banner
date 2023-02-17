@@ -2,15 +2,23 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    resize: none;
-    border: none;
     padding: 3ch;
 }
+
+#logo {
+    top: 0ch;
+    position: absolute;
+}
+
+#form-question {
+    position: absolute;
+    top: 8ch;
+}
+
 .question-class {
     margin-bottom: 3ch;
     border: 2px solid rgb(0, 11, 255);
-    outline-color: rgb(100, 155, 255);
+    outline-color: rgb(100, 100, 255);
 }
 
 #submitButton {
