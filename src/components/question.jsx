@@ -6,6 +6,9 @@ export const Question = (props) => {
       className="question-class"
       minRows={5}
       cols={100}
+      name={props.name}
+      value={props.value}
+      onChange={props.onTextChange}
     />
   );
 };
