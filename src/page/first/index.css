@@ -19,6 +19,8 @@
     margin-bottom: 3ch;
     border: 2px solid rgb(0, 11, 255);
     outline-color: rgb(100, 100, 255);
+    font-size: 12;
+    font-family: "NotoSerifWeb","Noto Serif CJK Kr","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
 }
 
 #submitButton {

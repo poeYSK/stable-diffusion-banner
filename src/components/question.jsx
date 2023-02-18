@@ -1,4 +1,5 @@
 import TextareaAutosize from "react-textarea-autosize";
+
 export const Question = (props) => {
   return (
     <TextareaAutosize
@@ -8,6 +9,7 @@ export const Question = (props) => {
       cols={100}
       name={props.name}
       value={props.value}
+      placeholder={props.q.ph}
       onChange={props.onTextChange}
     />
   );

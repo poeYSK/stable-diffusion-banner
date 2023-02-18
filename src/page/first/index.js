@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
-import questionData from "../../data/QuestionData";
+import { questionData } from "../../data/QuestionData";
 import { Question } from "../../components/question";
 import { Label } from "../../components/label";
 
 const FirstPage = (props) => {
   const navigate = useNavigate();
+  const [revitalize, setRevitalize] = useState(true);
   const [text, setText] = useState({
     first_text: "",
     second_text: "",
@@ -21,6 +22,7 @@ const FirstPage = (props) => {
       ...text,
       [name]: value,
     });
+    console.log(text);
   };
 
   const onClickSubmit = () => {
@@ -28,10 +30,19 @@ const FirstPage = (props) => {
     console.log(text);
   };
 
+  const isRevitalize = () => {
+    text.map((t) => {
+      if (t === "") {
+      }
+    });
+  };
+
   return (
     <div id="container-First">
       <div id="logo">
-        <h1>A.I.Banner</h1>
+        <p style={{ fontSize: 20 }}>
+          <b style={{ fontSize: 36, color: "rgb(100,100,255)" }}>A.I.B</b>anner
+        </p>
       </div>
       <div id="form-question">
         <Label q={questionData[0]} /> <br />
@@ -61,7 +72,12 @@ const FirstPage = (props) => {
       </div>
       <form>
         <div id="submit">
-          <button id="submitButton" type="sumbit" onClick={onClickSubmit}>
+          <button
+            id="submitButton"
+            type="sumbit"
+            onClick={onClickSubmit}
+            disabled={revitalize}
+          >
             Submit
           </button>
         </div>

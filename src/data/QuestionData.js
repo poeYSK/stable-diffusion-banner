@@ -1,19 +1,17 @@
-const questionData = [
+export const questionData = [
   {
     id: "first-id",
     question: "First question",
-    placehoder: "first place",
+    ph: "ex) first place",
   },
   {
     id: "second-id",
     question: "Second question",
-    placehoder: "second place",
+    ph: "ex) second place",
   },
   {
     id: "third-id",
     question: "Third question",
-    placehoder: "third place",
+    ph: "ex) third place",
   },
 ];
-
-export default questionData;
