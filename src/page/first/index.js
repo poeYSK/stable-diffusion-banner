@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "antd";
+import { PlusCircleOutlined } from "@ant-design/icons";
 import "./index.css";
 import { questionData } from "../../data/QuestionData";
 import { Question } from "../../components/question";
 import { Label } from "../../components/label";
+import { Comment } from "../../components/comment";
 
 const FirstPage = (props) => {
   const navigate = useNavigate();
-  const [revitalize, setRevitalize] = useState(true);
   const [text, setText] = useState({
     first_text: "",
     second_text: "",
     third_text: "",
   });
+  const [commentList, setCommentList] = useState([0]);
 
   const { first_text, second_text, third_text } = text;
 
@@ -30,11 +33,12 @@ const FirstPage = (props) => {
     console.log(text);
   };
 
-  const isRevitalize = () => {
-    text.map((t) => {
-      if (t === "") {
-      }
-    });
+  const onClickMakeComment = () => {
+    let countList = [...commentList];
+    let counter = countList.slice(-1)[0];
+    counter += 1;
+    countList.push(counter);
+    setCommentList(countList);
   };
 
   return (
@@ -70,14 +74,15 @@ const FirstPage = (props) => {
         />{" "}
         <br />
       </div>
+      <div id="form-comment">
+        <Comment commentList={commentList} />
+        <Button onClick={onClickMakeComment}>
+          <PlusCircleOutlined /> 추가
+        </Button>
+      </div>
       <form>
         <div id="submit">
-          <button
-            id="submitButton"
-            type="sumbit"
-            onClick={onClickSubmit}
-            disabled={revitalize}
-          >
+          <button id="submitButton" type="sumbit" onClick={onClickSubmit}>
             Submit
           </button>
         </div>

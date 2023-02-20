@@ -15,6 +15,15 @@
     top: 8ch;
 }
 
+#form-comment {
+    position: absolute;
+    display: flex;
+    padding: 3rem;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
 .question-class {
     margin-bottom: 3ch;
     border: 2px solid rgb(0, 11, 255);
