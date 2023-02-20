@@ -1,27 +1,9 @@
 #container-First {
+    padding: 2rem;
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding: 3ch;
-}
-
-#logo {
-    top: 0ch;
-    position: absolute;
-}
-
-#form-question {
-    position: absolute;
-    top: 8ch;
-}
-
-#form-comment {
-    position: absolute;
-    display: flex;
-    padding: 3rem;
     align-items: center;
     flex-direction: column;
-    width: 100%;
 }
 
 .question-class {
@@ -29,19 +11,17 @@
     border: 2px solid rgb(0, 11, 255);
     outline-color: rgb(100, 100, 255);
     font-size: 12;
-    font-family: "NotoSerifWeb","Noto Serif CJK Kr","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    font-family: "NotoSerifWeb", "Noto Serif CJK Kr", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+.comment-class {
+    margin-bottom: 2rem;
 }
 
 #submitButton {
     border: 0px solid black;
     border-radius: 8px;
     background-color: rgb(200, 200, 255);
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 20ch;
-    bottom: 5ch;
     height: 5ch;
     width: 10ch;
     font-size: 1rem;

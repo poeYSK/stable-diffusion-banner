@@ -15,7 +15,7 @@ const FirstPage = (props) => {
     second_text: "",
     third_text: "",
   });
-  const [commentList, setCommentList] = useState([0]);
+  const [countList, setCountList] = useState([0]);
 
   const { first_text, second_text, third_text } = text;
 
@@ -34,11 +34,11 @@ const FirstPage = (props) => {
   };
 
   const onClickMakeComment = () => {
-    let countList = [...commentList];
-    let counter = countList.slice(-1)[0];
+    let countArr = [...countList];
+    let counter = countArr.slice(-1)[0];
     counter += 1;
-    countList.push(counter);
-    setCommentList(countList);
+    countArr.push(counter);
+    setCountList(countArr);
   };
 
   return (
@@ -75,7 +75,7 @@ const FirstPage = (props) => {
         <br />
       </div>
       <div id="form-comment">
-        <Comment commentList={commentList} />
+        <Comment countList={countList} />
         <Button onClick={onClickMakeComment}>
           <PlusCircleOutlined /> 추가
         </Button>
