@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
 import { PlusCircleOutlined } from "@ant-design/icons";
+import { MinusCircleOutlined } from "@ant-design/icons";
 import "./index.css";
 import { questionData } from "../../data/QuestionData";
 import { Question } from "../../components/question";
 import { Label } from "../../components/label";
 import { Comment } from "../../components/comment";
 
-const FirstPage = (props) => {
+const FirstPage = () => {
+  let counter;
   const navigate = useNavigate();
   const [text, setText] = useState({
     first_text: "",
@@ -35,11 +37,13 @@ const FirstPage = (props) => {
 
   const onClickMakeComment = () => {
     let countArr = [...countList];
-    let counter = countArr.slice(-1)[0];
+    counter = countArr.slice(-1)[0];
     counter += 1;
     countArr.push(counter);
     setCountList(countArr);
   };
+
+  const onClickDeleteComment = () => {};
 
   return (
     <div id="container-First">
@@ -75,9 +79,13 @@ const FirstPage = (props) => {
         <br />
       </div>
       <div id="form-comment">
+        <label>문구</label>
         <Comment countList={countList} />
         <Button onClick={onClickMakeComment}>
           <PlusCircleOutlined /> 추가
+        </Button>
+        <Button onClick={onClickDeleteComment}>
+          <MinusCircleOutlined /> 제거
         </Button>
       </div>
       <form>
