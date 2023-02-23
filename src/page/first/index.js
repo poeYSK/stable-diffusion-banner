@@ -18,6 +18,7 @@ const FirstPage = () => {
     third_text: "",
   });
   const [countList, setCountList] = useState([0]);
+  const [comments, setComments] = useState([]);
 
   const { first_text, second_text, third_text } = text;
 
@@ -28,6 +29,10 @@ const FirstPage = () => {
       [name]: value,
     });
     console.log(text);
+  };
+
+  const onCommentChange = (newComments) => {
+    setComments(newComments);
   };
 
   const onClickSubmit = () => {
@@ -43,7 +48,13 @@ const FirstPage = () => {
     setCountList(countArr);
   };
 
-  const onClickDeleteComment = () => {};
+  const onClickDeleteComment = () => {
+    let countArr = [...countList];
+    if (countArr.length > 1) {
+      countArr.pop();
+      setCountList(countArr);
+    }
+  };
 
   return (
     <div id="container-First">
