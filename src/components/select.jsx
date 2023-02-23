@@ -1,6 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
 
-export const SelectStyle = styled.select`
+const SelectStyle = styled.select`
   &:focus {
     border-color: red;
   }
@@ -17,8 +18,19 @@ const IconSVG = styled.svg`
 `;
 
 export const Select = () => {
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const onOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+    console.log(selectedOption);
+  };
+
   return (
-    <SelectStyle id="form-select">
+    <SelectStyle
+      id="form-select"
+      value={selectedOption}
+      onChange={onOptionChange}
+    >
       <option key="test1" value="test1">
         test1
       </option>
@@ -33,8 +45,8 @@ export const Select = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M10 14L16 6H4L10 14Z"
           fill="#1A1A1A"
         />
