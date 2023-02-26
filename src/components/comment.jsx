@@ -6,9 +6,9 @@ import TextareaAutosize from "react-textarea-autosize";
 import { Select } from "./select";
 
 export const Comment = (props) => {
-  const [comments, setComments] = useState(props.comments || []);
+  const [comments, setComments] = useState(props.comments || [""]);
   const [selectedOptions, setSelectedOptions] = useState(
-    props.selectedOptions || []
+    props.selectedOptions || [""]
   );
 
   const addComment = () => {
@@ -51,14 +51,17 @@ export const Comment = (props) => {
           />
           <TextareaAutosize
             id=""
-            className="question-class"
+            className="comment-outline"
             minRows={5}
             cols={100}
             value={comment || ""}
             onChange={(e) => onTextChange(index, e)}
           />
           {comments.length > 1 && (
-            <Button onClick={() => deleteComment(index)}>
+            <Button
+              className="delete-button"
+              onClick={() => deleteComment(index)}
+            >
               <MinusCircleOutlined />
               Delete
             </Button>
